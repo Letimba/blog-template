@@ -1,2 +1,28 @@
 [build]
-  command = 'pnpm build'
+  command = "pnpm run build"
+
+[build.environment]
+  # Set the NODE_VERSION to ensure compatibility
+  NODE_VERSION = "16.17.1"
+
+# Define the directories for Netlify's functions, public, and logging
+[functions]
+  directory = "functions"
+
+[context.production.environment]
+  # Set environment variables for the production build
+  NODE_ENV = "production"
+
+# Set the publish directory to the 'dist' folder
+[context.production]
+  command = "pnpm run build"
+  publish = "dist"
+
+# Define the directories for Astro's assets, components, layouts, and scripts
+[astro]
+  output = "dist/"
+  adapter = "netlify"
+
+# Configure the public directory for static files
+[build.publish]
+  directory = "dist/static"
