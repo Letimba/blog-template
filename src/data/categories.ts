@@ -1,11 +1,6 @@
 export const CATEGORIES = [
-  'Notion Templates',
-  'Productivity',
-  'Personal Growth',
-  'Business',
-  'Student Life',
-  'Freelancing',
-  'Finance Tracking',
-  'Writing',
-  'Marketing'
+  'Notion',
+  'Template',
+  'Productivity', 
+  'Life OS', 
 ] as const
